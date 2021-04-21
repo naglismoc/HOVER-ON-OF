@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="turinys"></div>
+    
+    <div  id="hoverMe">hover me</div>
+    <div  id="clickMe">click me</div>
+    
+
+    <!-- 1. generuoja kontentą,
+    2. suteikia gyvumo,funkcionalumo
+    3. gauna duomenis iš serverio. -->
+
+
+<style>
+    .on{
+        background-color: yellow;
+        height: 100px;
+        color:purple;
+        animation-name: example;
+        animation-duration: 1s;
+    }
+    @keyframes example {
+        from {background-color: red;}
+        to {background-color: yellow;}
+    }
+    .off{
+        background-color: red;
+        height: 100px;
+        color:purple;
+        animation-name: example1;
+        animation-duration: 1s;
+    }
+    @keyframes example1 {
+        from {background-color: yellow;}
+        to {background-color: red;}
+    }
+</style>
+
+    <script>
+
+document.getElementById("clickMe").addEventListener("click",function () {
+  alert("yo yo ka paspaudei");
+});
+
+    let item = document.getElementById("hoverMe");
+    item.addEventListener("mouseover", func, false);
+    item.addEventListener("mouseout", func1, false);
+
+    function func()
+    { 
+        
+    item.classList.remove("off");
+    item.classList.add("on");
+    
+    }
+
+    function func1()
+    {  
+    item.classList.remove("on"); 
+    item.classList.add("off");
+    }
+
+
+
+
+
+
+        let HTML = "";
+        for (let i = 1; i < 7; i++) {
+            HTML += "<h"  +  i  +  ">"  + i + "</h" + i + ">";
+        }
+        // document.getElementById("turinys").innerHTML = HTML;
+
+    // const nuo = 5;
+    // const iki = 15;
+    // let most = ( iki * iki ).toString().length;
+
+            
+    // for (let a = nuo; a <= iki; a++) {
+    //     let row = '';
+    //     for (let i = nuo; i <= iki; i++) {
+    //         let difference = most - (a*i).toString().length;
+    //         let spaces = '';
+    //         for (let k = 0; k < difference ; k++) { 
+    //             spaces += ' ';     
+    //         }
+    //         row += spaces + i * a + ' ';
+    //     }
+    //    console.log(row);
+    // } 
+
+    
+
+    </script>
+</body>
+</html>
